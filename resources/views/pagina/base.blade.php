@@ -35,7 +35,7 @@
 					<div class="container">
 						<nav class="navbar navbar-expand-md navbar-light p-0">
 							<div class="logo flex-shrink-0 mr-3 mr-xl-8 mr-xlwd-16">
-								<a href="home.html">
+								<a href="{{route('home')}}">
 									<img src="../../../images/logo.png" class="img-fluid" alt="egovt">
 								</a>
 							</div>
@@ -43,19 +43,15 @@
 								<div class="collapse navbar-collapse pageMainNavCollapse mt-2 mt-md-0" id="pageMainNavCollapse">
 									<ul class="navbar-nav mainNavigation">
 										<li class="nav-item dropdown ddohOpener">
-											<a class="nav-link dropdown-toggle" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inicio</a>
+											<a class="nav-link dropdown-toggle" href="{{route('home')}}">Inicio</a>
 
 										</li>
 										<li class="nav-item dropdown ddohOpener">
 											<a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quienes Somos</a>
 											<div class="dropdown-menu hdMainDropdown desktopDropOnHover">
 												<ul class="list-unstyled mb-0 hdDropdownList">
-													<li class="dropdown-submenu">
-														<a href="javascript:void(0);" class="dropdown-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Como inició</a>
-														<a href="javascript:void(0);" class="dropdown-item dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lo que hacemos</a>
-		
-													</li>
-
+													<li><a class="dropdown-item" href="departments.html">Cómo Inició</a></li>
+													<li><a class="dropdown-item" href="departmentsSingle.html">Lo que hacemos</a></li>
 												</ul>
 											</div>
 										</li>
@@ -73,10 +69,11 @@
 											<a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Publicaciones</a>
 											<div class="dropdown-menu hdMainDropdown desktopDropOnHover">
 												<ul class="list-unstyled mb-0 hdDropdownList">
-													<li><a class="dropdown-item" href="departments.html">Notas Informativas</a></li>
-													<li><a class="dropdown-item" href="departmentsSingle.html">Folletos</a></li>
-													<li><a class="dropdown-item" href="departmentsSingle.html">Libros</a></li>
-													<li><a class="dropdown-item" href="departmentsSingle.html">Infografías</a></li>
+													<li><a class="dropdown-item" href="{{route('pagina.noticias.index')}}">Noticias</a></li>
+													<li><a class="dropdown-item" href="">Notas Informativas</a></li>
+													<li><a class="dropdown-item" href="">Folletos</a></li>
+													<li><a class="dropdown-item" href="">Libros</a></li>
+													<li><a class="dropdown-item" href="">Infografías</a></li>
 												</ul>
 											</div>
 										</li>

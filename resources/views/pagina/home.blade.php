@@ -10,10 +10,10 @@
 							<div class="align w-100 pt-20 pb-20 pt-md-40 pb-md-30 px-md-17">
 								<div class="container position-relative">
 									<div class="row">
-										<div class="col-12 col-md-9 col-xl-7 fzMedium" style="background-color: rgb(74, 71, 71);border-radius:15px;opacity:85%">
+										<div class="col-12 col-md-9 col-xl-7 fzMedium" >
 											<h1 class="text-white mb-4 h1Medium">{{$item->titulo}}</h1>
 											<p>{{$item->description}}</p>
-											<a href="" class="btn btnTheme font-weight-bold btnMinSm text-capitalize position-relative border-0 p-0 mt-6" data-hover="Leer Más...">
+											<a href="{{route('pagina.noticias.show',$item->id)}}" class="btn btnTheme font-weight-bold btnMinSm text-capitalize position-relative border-0 p-0 mt-6" data-hover="Leer Más...">
 												<span class="d-block btnText">Leer Más..</span>
 											</a>
 										</div>
@@ -108,10 +108,10 @@
 											<i class="icomoon-chat"><span class="sr-only">icon</span></i> 0
 										</strong>
 										<h3 class="fwSemiBold mb-6">
-											<a href="newsSingle.html">{{ Str::limit($item->titulo,80)}}</a>
+											<a href="{{route('pagina.noticias.show',$item->id)}}">{{ Str::limit($item->titulo,80)}}</a>
 											
 										</h3>
-										<a href="newsSingle.html" class="btnCr d-inline-block align-top fontAlter">Continuar Leyendo <i class="icomoon-arrowRight bcIcn ml-2 align-middle"><span class="sr-only">icon</span></i></a>
+										<a href="{{route('pagina.noticias.show',$item->id)}}" class="btnCr d-inline-block align-top fontAlter">Continuar Leyendo <i class="icomoon-arrowRight bcIcn ml-2 align-middle"><span class="sr-only">icon</span></i></a>
 									</div>
 								</article>
 							</div>

@@ -64,9 +64,10 @@ class NoticiasController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(noticias $noticias)
+    public function show($id)
     {
-        //
+        $noticia=noticias::find($id);
+        return view('pagina.noticias.show',['noticia'=>$noticia]);
     }
 
     /**

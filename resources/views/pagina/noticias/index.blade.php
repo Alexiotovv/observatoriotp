@@ -1,6 +1,13 @@
 @extends('pagina.base')
 @section('contenido')
 <div class="col-lg-12 col-sm-12">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrBlack rounded-0 border-0 p-0 fontAlter mb-0">
+            <li class="breadcrumb-item"><a href="{{route('home')}}">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="{{route('pagina.noticias.index')}}">Todas las Noticias</a></li>
+        </ol>
+        <br>
+    </nav>
 <div class="row">
     <div class="col-sm-6">
         <h2>Todas las Noticias</h2>
@@ -81,10 +88,10 @@
                                 <i class="icomoon-chat"><span class="sr-only">icon</span></i> 0
                             </strong>
                             <h3 class="fwSemiBold mb-6">
-                                <a href="{{route('pagina.noticias.show')}}">{{ Str::limit($item->titulo,80)}}</a>
+                                <a href="{{route('pagina.noticias.show',$item->id)}}">{{ Str::limit($item->titulo,80)}}</a>
                                 
                             </h3>
-                            <a href="{{route('pagina.noticias.show')}}" class="btnCr d-inline-block align-top fontAlter">Continuar Leyendo <i class="icomoon-arrowRight bcIcn ml-2 align-middle"><span class="sr-only">icon</span></i></a>
+                            <a href="{{route('pagina.noticias.show',$item->id)}}" class="btnCr d-inline-block align-top fontAlter">Continuar Leyendo <i class="icomoon-arrowRight bcIcn ml-2 align-middle"><span class="sr-only">icon</span></i></a>
                         </div>
                     </article>
                 </div>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoticiasController;
+use App\Http\Controllers\DatosController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'index'])->name('home');
 
 Route::get('/pagina/noticias/index',[NoticiasController::class,'noticias_index'])->name('pagina.noticias.index');
-Route::get('/pagina/noticias/show',[NoticiasController::class,'noticias_show'])->name('pagina.noticias.show');
+Route::get('/pagina/noticias/show/{id}',[NoticiasController::class,'show'])->name('pagina.noticias.show');
 
 
 
@@ -30,3 +31,9 @@ Route::get('/panel/noticias/create',[NoticiasController::class,'create'])->name(
 Route::post('/panel/noticias/store',[NoticiasController::class,'store'])->name('panel.noticias.store');
 Route::get('/panel/noticias/edit/{id}',[NoticiasController::class,'edit'])->name('panel.noticias.edit');
 Route::post('/panel/noticias/update',[NoticiasController::class,'update'])->name('panel.noticias.update');
+
+Route::get('/panel/datos/index',[DatosController::class,'index'])->name('panel.datos.index');
+Route::get('/panel/datos/create',[DatosController::class,'create'])->name('panel.datos.create');
+Route::post('/panel/datos/store',[DatosController::class,'store'])->name('panel.datos.store');
+Route::get('/panel/datos/edit/{id}',[DatosController::class,'edit'])->name('panel.datos.edit');
+Route::post('/panel/datos/update',[DatosController::class,'update'])->name('panel.datos.update');
