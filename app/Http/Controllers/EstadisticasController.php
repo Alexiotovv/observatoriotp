@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\datos;
+use App\Models\estadisticas;
 use Illuminate\Http\Request;
 
-class DatosController extends Controller
+class EstadisticasController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $datos=datos::all();
-        return view('panel.datos.index',['datos'=>$datos]);
+        //
     }
 
     /**
@@ -21,7 +20,7 @@ class DatosController extends Controller
      */
     public function create()
     {
-        return view('panel.datos.create');
+        //
     }
 
     /**
@@ -35,7 +34,7 @@ class DatosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(datos $datos)
+    public function show(estadisticas $estadisticas)
     {
         //
     }
@@ -43,7 +42,7 @@ class DatosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(datos $datos)
+    public function edit(estadisticas $estadisticas)
     {
         //
     }
@@ -51,7 +50,7 @@ class DatosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, datos $datos)
+    public function update(Request $request, estadisticas $estadisticas)
     {
         //
     }
@@ -59,7 +58,7 @@ class DatosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(datos $datos)
+    public function destroy(estadisticas $estadisticas)
     {
         //
     }

@@ -59,9 +59,9 @@
 											<a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Observatorio</a>
 											<div class="dropdown-menu hdMainDropdown desktopDropOnHover">
 												<ul class="list-unstyled mb-0 hdDropdownList">
-													<li><a class="dropdown-item" href="departments.html">Datos Estadístico</a></li>
-													<li><a class="dropdown-item" href="departmentsSingle.html">Red de Servicios</a></li>
-													<li><a class="dropdown-item" href="departmentsSingle.html">Normatividad</a></li>
+													<li><a class="dropdown-item" href="{{route('panel.instituciones.index')}}">Datos Estadístico</a></li>
+													<li><a class="dropdown-item" href="">Red de Servicios</a></li>
+													<li><a class="dropdown-item" href="">Normatividad</a></li>
 												</ul>
 											</div>
 										</li>

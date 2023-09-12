@@ -17,7 +17,7 @@
                 <input type="text" maxlength="250" value="{{$noticia->titulo}}" name="titulo" class="form-control">
 
                 <label for="">Descripción</label>
-                <textarea name="descripcion" id="descripcion" class="form-control">{{$noticia->description}}</textarea>
+                <textarea name="descripcion" id="descripcion" class="form-control">{{$noticia->descripcion}}</textarea>
 
                 <label for="">Contenido</label>
                 <textarea name="contenido" id="contenido" cols="30" rows="8" class="form-control">{{$noticia->contenido}}</textarea>
@@ -95,8 +95,8 @@
     <script>
         imgpreview("#ruta_foto","#imagen");
     </script>
-    <script src="https://cdn.tiny.cloud/1/4wya3wjn43w5kzye9wy73hdg6o6fv12cdk8emfpbcztc175m/tinymce/6/tinymce.min.js"></script>
-    {{-- <script src="../../../tinymce/tinymce.min.js"></script> --}}
+    {{-- <script src="https://cdn.tiny.cloud/1/4wya3wjn43w5kzye9wy73hdg6o6fv12cdk8emfpbcztc175m/tinymce/6/tinymce.min.js"></script> --}}
+    <script src="../../../tinymce/tinymce.min.js"></script>
     <script type="text/javascript">
     tinymce.init({
       selector: '#contenido',

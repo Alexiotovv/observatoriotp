@@ -4,6 +4,15 @@
     <link href="../../../panel/assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 @endsection
 @section('contenido')
+
+{{-- Este  tamano-imagen reduce las imagenes del contenido porque estas
+    imágenes desbordan el datatable--}}
+<style>
+    .tamano-imagen img{
+        width: 100%;
+    }
+</style>
+
 <div class="card">
     <div class="card-body">
         {{-- aqui es el contenido --}}
@@ -16,62 +25,73 @@
             </div>
         </div>
         @if(Session::has('mensaje'))
-            <div class="col-sm-4">
-                <div class="alert border-0 border-start border-5 border-success alert-dismissible fade show py-2">
-                    <div class="d-flex align-items-center">
-                        <div class="font-35 text-success"><i class='bx bxs-check-circle'></i>
-                        </div>
-                        <div class="ms-3">
-                            <h6 class="mb-0 text-success">Registro Guardado</h6>
-                            <div>El registro se guardó correctamente!</div>
-                        </div>
+        <div class="col-sm-4">
+            <div class="alert border-0 border-start border-5 border-success alert-dismissible fade show py-2">
+                <div class="d-flex align-items-center">
+                    <div class="font-35 text-success"><i class='bx bxs-check-circle'></i>
                     </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="ms-3">
+                        <h6 class="mb-0 text-success">Registro Guardado</h6>
+                        <div>El registro se guardó correctamente!</div>
+                    </div>
                 </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            
-        @endif
-
-        <div class="table table-container">
-            <table class="table table-striped table-bordered" id="dtnoticias">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Acción</th>
-                        <th>Titulo</th>
-                        <th>Descripción</th>
-                        <th>Contenido</th>
-                        <th>Fecha</th>
-                        <th>Imagen</th>
-                        <th>Slider</th>
-                        <th>Portada</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($noticias as $n)                    
-                        <tr>
-                            <td>{{$n->id}}</td>
-                            <td>
-                                <a href="{{route('panel.noticias.edit',$n->id)}}" class="btn btn-warning btn-sm"><i class="fadeIn animated bx bx-pencil"></i></a>
-                            </td>
-                            <td>{{$n->titulo}}</td>
-                            <td>{{$n->description}}</td>
-                            <td>{!! $n['contenido'] !!}</td>
-                            <td>{{$n->fecha}}</td>
-                            <td>
-                                <img src="{{asset('storage/noticias/'.$n->ruta_foto)}}" style="height: 120px;" alt="">
-                                
-                            </td>
-                            <td>{{$n->slider}}</td>
-                            <td>{{$n->portada}}</td>
-                            <td>{{$n->estado}}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
         </div>
         
+        @endif
+            <div class="card card-body">
+                <table class="table table-hover table-striped table-bordered" id="dtnoticias">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Acción</th>
+                            <th>Titulo</th>
+                            <th>Descripción</th>
+                            <th>Contenido</th>
+                            <th>Fecha</th>
+                            <th>Imagen</th>
+                            <th>Slider</th>
+                            <th>Portada</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($noticias as $n)                    
+                            <tr>
+                                <td>{{$n->id}}</td>
+                                <td>
+                                    <a href="{{route('panel.noticias.edit',$n->id)}}" class="btn btn-warning btn-sm"><i class="fadeIn animated bx bx-pencil"></i></a>
+                                </td>
+                                <td>{{$n->titulo}}</td>
+                                <td>{{$n->descripcion}}</td>
+                                <td>
+                                    <div class="tamano-imagen">
+                                        {!! $n['contenido'] !!}
+                                    </div>
+                                </td>
+                                <td>{{$n->fecha}}</td>
+                                <td>
+                                    <img src="{{asset('storage/noticias/'.$n->ruta_foto)}}" style="height: 120px;" alt="">
+                                    
+                                </td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        @if ($n->slider)
+                                            <input class="form-check-input" type="checkbox" id="chkslider" checked>
+                                        @else
+                                            <input class="form-check-input" type="checkbox" id="chkslider">
+                                        @endif
+                                    </div>
+                                    
+                                </td>
+                                <td>{{$n->portada}}</td>
+                                <td>{{$n->estado}}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
     </div>
 
 </div>
@@ -81,9 +101,9 @@
         $("#dtnoticias").DataTable({
             order:[0],
             columnDefs: [
-            // { width: "10px", targets: 0 },
+            { width: "80px;", targets: 4 },
             // { width: "40px", targets: 1 },
-            { width: "350px", targets: 2 },
+            // { width: "350px", targets: 2 },
             
             ]
     

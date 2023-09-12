@@ -9,10 +9,10 @@
         {{-- aqui es el contenido --}}
         <div class="row">
             <div class="col-sm-6">
-                <h5>Datos</h5>
+                <h5>Periodos</h5>
             </div>
             <div class="col-sm-6" style="text-align-last: end">
-                <a class="btn btn-primary btn-sm" href="{{route('panel.datos.create')}}"><i class="lni lni-circle-plus"></i>Nueva Noticia</a>
+                <a class="btn btn-primary btn-sm" href="{{route('panel.periodos.create')}}"><i class="lni lni-circle-plus"></i>Nuevo Periodo</a>
             </div>
         </div>
         @if(Session::has('mensaje'))
@@ -33,32 +33,24 @@
         @endif
 
         <div class="table table-container">
-            <table class="table table-striped table-bordered" id="dtdatos">
+            <table class="table table-striped table-bordered" id="dtperiodos">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Acción</th>
-                        <th>Logo</th>
-                        <th>Titulo</th>
+                        <th>Nombre</th>
                         <th>Descripción</th>
-                        <th>Contenido</th>
-                        <th>Estado</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($datos as $d)                    
+                    @foreach ($periodos as $d)                    
                         <tr>
                             <td>{{$d->id}}</td>
                             <td>
-                                <a href="{{route('panel.datos.edit',$d->id)}}" class="btn btn-warning btn-sm"><i class="fadeIn animated bx bx-pencil"></i></a>
+                                <a href="{{route('panel.periodos.edit',$d->id)}}" class="btn btn-warning btn-sm"><i class="fadeIn animated bx bx-pencil"></i></a>
                             </td>
-                            <td>
-                                <img src="{{asset('storage/datos/'.$n->ruta_logo)}}" style="height: 120px;" alt="">
-                            </td>
-                            <td>{{$d->titulo}}</td>
-                            <td>{{$d->description}}</td>
-                            <td>{!! $d['contenido'] !!}</td>
-                            <td>{{$n->estado}}</td>
+                            <td>{{$d->nombre}}</td>
+                            <td>{{$d->descripcion}}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -71,7 +63,7 @@
 @endsection
 @section('extra_js')
     <script>
-        $("#dtnoticias").DataTable({
+        $("#dtperiodos").DataTable({
             order:[0],
             columnDefs: [
             // { width: "10px", targets: 0 },

@@ -11,16 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('noticias', function (Blueprint $table) {
+        Schema::create('estadisticas', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo', 250)->default('');
-            $table->longText('descripcion');
+            $table->bigInteger('idperiodos')->unsigned();
+            $table->foreign('idperiodos')->references('id')->on('periodos')->onDelete('cascade');
+            $table->bigInteger('idinstituciones')->unsigned();
+            $table->foreign('idinstituciones')->references('id')->on('instituciones')->onDelete('cascade');
+            $table->string('titulo', 100)->default('');
             $table->longText('contenido');
             $table->date('fecha');
-            $table->string('ruta_foto', 250)->default('');
-            $table->boolean('slider')->default(false);
-            $table->boolean('portada')->default(false);
-            $table->boolean('estado')->default(false);
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('noticias');
+        Schema::dropIfExists('estadisticas');
     }
 };

@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('datos', function (Blueprint $table) {
+        Schema::create('periodos', function (Blueprint $table) {
             $table->id();
-            $table->string('ruta_logo', 250)->default('');
-            $table->string('titulo', 250)->default('');
-            $table->text('description');
-            $table->longText('contenido');
-            $table->boolean('estado')->default(true);
+            $table->string('nombre', 250)->default('');
+            $table->string('descripcion', 250)->default('');
             $table->timestamps();
         });
     }
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('datos');
+        Schema::dropIfExists('periodos');
     }
 };

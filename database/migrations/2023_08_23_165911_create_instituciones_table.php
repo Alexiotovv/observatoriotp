@@ -11,16 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('noticias', function (Blueprint $table) {
+        Schema::create('instituciones', function (Blueprint $table) {
             $table->id();
+            $table->string('ruta_logo', 250)->default('');
             $table->string('titulo', 250)->default('');
-            $table->longText('descripcion');
+            $table->text('descripcion');
             $table->longText('contenido');
-            $table->date('fecha');
-            $table->string('ruta_foto', 250)->default('');
-            $table->boolean('slider')->default(false);
-            $table->boolean('portada')->default(false);
-            $table->boolean('estado')->default(false);
+            $table->boolean('estado')->default(true);
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('noticias');
+        Schema::dropIfExists('instituciones');
     }
 };

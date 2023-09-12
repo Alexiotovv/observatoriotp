@@ -54,7 +54,9 @@
 					<ul>
 						<li> <a href="{{route('panel.noticias.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Noticias</a>
 						</li>
-						<li> <a href="{{route('panel.datos.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Datos</a>
+						<li> <a href="{{route('panel.instituciones.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Estadística</a>
+						</li>
+						<li> <a href="{{route('panel.periodos.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Periodos</a>
 						</li>
 					</ul>
 				</li>

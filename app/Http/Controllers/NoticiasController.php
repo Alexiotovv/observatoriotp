@@ -51,7 +51,7 @@ class NoticiasController extends Controller
             $obj->ruta_foto = $archivo;
         }
         $obj->titulo = request('titulo');
-        $obj->description = request('descripcion');
+        $obj->descripcion = request('descripcion');
         $obj->contenido = request('contenido');
         $obj->fecha = request('fecha');
         //nombre archivo y ruta es arriba
@@ -96,7 +96,7 @@ class NoticiasController extends Controller
             $obj->ruta_foto = $archivo;
         }
         $obj->titulo = request('titulo');
-        $obj->description = request('descripcion');
+        $obj->descripcion = request('descripcion');
         $obj->contenido = request('contenido');
         $obj->fecha = request('fecha');
         //nombre archivo y ruta es arriba
