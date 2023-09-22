@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
-	<link rel="icon" href="../../../panel/assets/images/favicon-32x32.png" type="image/png" />
+	<link rel="icon" href="../../../images/logo-gorel.png" type="image/png" />
 	<!--plugins-->
 	<link href="../../../panel/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
 	<link href="../../../panel/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
@@ -35,7 +35,7 @@
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header">
 				<div>
-					<img src="../../../panel/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+					<img src="../../../images/logo-gorel.png" class="logo-icon" alt="logo icon">
 				</div>
 				<div>
 					<h4 class="logo-text"><a href="{{route('home')}}">Observatorio</a></h4>
@@ -57,6 +57,8 @@
 						<li> <a href="{{route('panel.instituciones.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Estadística</a>
 						</li>
 						<li> <a href="{{route('panel.periodos.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Periodos</a>
+						</li>
+						<li> <a href="{{route('panel.infografias.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Infografías</a>
 						</li>
 					</ul>
 				</li>

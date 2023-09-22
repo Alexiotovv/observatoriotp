@@ -24,22 +24,22 @@
                 <a class="btn btn-primary btn-sm" href="{{route('panel.noticias.create')}}"><i class="lni lni-circle-plus"></i>Nueva Noticia</a>
             </div>
         </div>
-        @if(Session::has('mensaje'))
-        <div class="col-sm-4">
-            <div class="alert border-0 border-start border-5 border-success alert-dismissible fade show py-2">
-                <div class="d-flex align-items-center">
-                    <div class="font-35 text-success"><i class='bx bxs-check-circle'></i>
+        @if(session()->has('mensaje'))
+            <div class="col-sm-4">
+                <div class="alert border-0 border-start border-5 border-success alert-dismissible fade show py-2">
+                    <div class="d-flex align-items-center">
+                        <div class="font-35 text-success"><i class='bx bxs-check-circle'></i>
+                        </div>
+                        <div class="ms-3">
+                            <h6 class="mb-0 text-success">Mensaje</h6>
+                            <div>{{Session::get('mensaje')}}</div>
+                        </div>
                     </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0 text-success">Registro Guardado</h6>
-                        <div>El registro se guardó correctamente!</div>
-                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-        </div>
-        
         @endif
+
             <div class="card card-body">
                 <table class="table table-hover table-striped table-bordered" id="dtnoticias">
                     <thead>
@@ -78,15 +78,31 @@
                                 <td>
                                     <div class="form-check form-switch">
                                         @if ($n->slider)
-                                            <input class="form-check-input" type="checkbox" id="chkslider" checked>
+                                            <input class="form-check-input chkslider" onclick="cambia_estado('slider')" type="checkbox" id="chkslider" checked>
                                         @else
-                                            <input class="form-check-input" type="checkbox" id="chkslider">
+                                            <input class="form-check-input chkslider" onclick="cambia_estado('slider')" type="checkbox" id="chkslider">
                                         @endif
                                     </div>
-                                    
                                 </td>
-                                <td>{{$n->portada}}</td>
-                                <td>{{$n->estado}}</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        @if ($n->portada)
+                                            <input class="form-check-input chkportada" onclick="cambia_estado('portada')" type="checkbox" id="chkportada" checked>
+                                        @else
+                                            <input class="form-check-input chkportada" onclick="cambia_estado('portada')" type="checkbox" id="chkportada">
+                                        @endif
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        @if ($n->estado)
+                                            <input class="form-check-input chkestado" onclick="cambia_estado('estado')" type="checkbox" id="chkestado" checked>
+                                        @else
+                                            <input class="form-check-input chkestado" onclick="cambia_estado('estado')" type="checkbox" id="chkestado">
+                                        @endif
+                                    </div>
+                                </td>
+                                
                             </tr>
                         @endforeach
                     </tbody>
@@ -104,10 +120,27 @@
             { width: "80px;", targets: 4 },
             // { width: "40px", targets: 1 },
             // { width: "350px", targets: 2 },
-            
             ]
-    
         });
+
+
+        function cambia_estado(elemento) { 
+            $(document).on("click",".chk"+ elemento +"",function (e){
+            // e.preventDefault();
+            if ($(this).prop('checked')) { valor=1; } else { valor=0; }
+            fila = $(this).closest("tr");
+            id = (fila).find('td:eq(0)').text();
+            $.ajax({
+                type: "GET",
+                url: "/panel/noticias/"+ id +"/"+ elemento +"/"+ valor,
+                data: "data",
+                dataType: "dataType",
+                success: function (response) {
+                    
+                }
+            });            
+            })
+         }
     </script>
 
 

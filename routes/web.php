@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoticiasController;
 use App\Http\Controllers\InstitucionesController;
 use App\Http\Controllers\PeriodosController;
+use App\Http\Controllers\InfografiasController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -35,6 +36,12 @@ Route::post('/panel/noticias/store',[NoticiasController::class,'store'])->name('
 Route::get('/panel/noticias/edit/{id}',[NoticiasController::class,'edit'])->name('panel.noticias.edit');
 Route::post('/panel/noticias/update',[NoticiasController::class,'update'])->name('panel.noticias.update');
 
+//NOTICIAS ESTADOS
+Route::get('/panel/noticias/{id}/slider/{valor}',[NoticiasController::class,'slider'])->name('panel.noticias.slider');
+Route::get('/panel/noticias/{id}/portada/{valor}',[NoticiasController::class,'portada'])->name('panel.noticias.portada');
+Route::get('/panel/noticias/{id}/estado/{valor}',[NoticiasController::class,'estado'])->name('panel.noticias.estado');
+
+
 //INSTITUCIONES
 Route::get('/panel/instituciones/index',[InstitucionesController::class,'index'])->name('panel.instituciones.index');
 Route::get('/panel/instituciones/create',[InstitucionesController::class,'create'])->name('panel.instituciones.create');
@@ -48,4 +55,14 @@ Route::get('/panel/periodos/create',[PeriodosController::class,'create'])->name(
 Route::get('/panel/periodos/edit/{id}',[PeriodosController::class,'edit'])->name('panel.periodos.edit');
 Route::post('/panel/periodos/store',[PeriodosController::class,'store'])->name('panel.periodos.store');
 Route::post('/panel/periodos/update',[PeriodosController::class,'update'])->name('panel.periodos.update');
+
+//INFOGRAFÍAS
+Route::get('/panel/infografias/create',[InfografiasController::class,'create'])->name('panel.infografias.create');
+Route::post('/panel/infografias/store',[InfografiasController::class,'store'])->name('panel.infografias.store');
+Route::get('/panel/infografias/index',[InfografiasController::class,'index'])->name('panel.infografias.index');
+Route::get('/panel/infografias/edit/{id}',[InfografiasController::class,'edit'])->name('panel.infografias.edit');
+Route::post('/panel/infografias/update',[InfografiasController::class,'update'])->name('panel.infografias.update');
+Route::get('/panel/infografias/{id}/estado/{valor}',[InfografiasController::class,'estado'])->name('panel.noticias.infografias');
+
+//CONFIGURACIONES
 

@@ -36,7 +36,7 @@
 						<nav class="navbar navbar-expand-md navbar-light p-0">
 							<div class="logo flex-shrink-0 mr-3 mr-xl-8 mr-xlwd-16">
 								<a href="{{route('home')}}">
-									<img src="../../../images/logo.png" class="img-fluid" alt="egovt">
+									<img src="../../../images/logo-gorel.png" style="height: 70px;" class="img-fluid" alt="egovt">
 								</a>
 							</div>
 							<div class="hdNavWrap flex-grow-1 d-flex align-items-center justify-content-end justify-content-lg-start">
@@ -50,8 +50,9 @@
 											<a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quienes Somos</a>
 											<div class="dropdown-menu hdMainDropdown desktopDropOnHover">
 												<ul class="list-unstyled mb-0 hdDropdownList">
-													<li><a class="dropdown-item" href="departments.html">Cómo Inició</a></li>
-													<li><a class="dropdown-item" href="departmentsSingle.html">Lo que hacemos</a></li>
+													<li><a class="dropdown-item" href="#">Cómo Inició</a></li>
+													<li><a class="dropdown-item" href="#">Lo que hacemos</a></li>
+													<li><a class="dropdown-item" href="#">Nuestro Equipo</a></li>
 												</ul>
 											</div>
 										</li>

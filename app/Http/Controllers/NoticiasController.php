@@ -59,7 +59,7 @@ class NoticiasController extends Controller
         $obj->portada = request('portada');
         $obj->estado = request('estado');
         $obj->save();
-        return redirect()->route('panel.noticias.index')->with('mensaje','ok');
+        return redirect()->route('panel.noticias.index')->with('mensaje','El registro se guardó correctamente!');
     }
     /**
      * Display the specified resource.
@@ -104,11 +104,37 @@ class NoticiasController extends Controller
         $obj->portada = request('portada');
         $obj->estado = request('estado');
         $obj->save();
-        return redirect()->route('panel.noticias.index');
+        return redirect()->route('panel.noticias.index')->with('mensaje','El registro se actualizó correctamente!');
     }
 
     public function destroy(noticias $noticias)
     {
         //
     }
+
+    public function slider($id,$valor)
+    {
+        $obj=noticias::findOrFail($id);
+        $obj->slider=$valor;
+        $obj->save();
+        $data=['Mensaje'=>'Ok'];
+        return response()->json($data);
+    }
+    public function portada($id,$valor)
+    {
+        $obj=noticias::findOrFail($id);
+        $obj->portada=$valor;
+        $obj->save();
+        $data=['Mensaje'=>'Ok'];
+        return response()->json($data);
+    }
+    public function estado($id,$valor)
+    {
+        $obj=noticias::findOrFail($id);
+        $obj->estado=$valor;
+        $obj->save();
+        $data=['Mensaje'=>'Ok'];
+        return response()->json($data);
+    }
+
 }
