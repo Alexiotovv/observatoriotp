@@ -14,7 +14,7 @@
                 @csrf
                 <input type="text" value="{{$periodo->id}}" name="id" hidden>
                 <label for="">Nombre</label>
-                <input type="text" maxlength="250" value="{{$periodo->nombre}}" name="titulo" class="form-control">
+                <input type="text" maxlength="250" value="{{$periodo->nombre}}" name="nombre" class="form-control">
 
                 <label for="">Descripción</label>
                 <textarea name="descripcion" id="descripcion" class="form-control">{{$periodo->descripcion}}</textarea>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\home;
 use App\Models\noticias;
+use App\Models\infografias;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +24,13 @@ class HomeController extends Controller
         ->orderBy('id','desc')
         ->take(18)
         ->get();
-        return view('pagina.home',['noticias'=>$noticias,'noticias_portada'=>$noticias_portada]);
+
+        $infos = infografias::where('estado','=',true)
+        ->orderBy('id','desc')
+        ->take(18)
+        ->get();
+
+        return view('pagina.home',['noticias'=>$noticias,'noticias_portada'=>$noticias_portada,'infos'=>$infos]);
     }
     public function index_panel()
     {

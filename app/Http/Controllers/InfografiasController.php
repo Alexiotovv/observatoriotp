@@ -12,10 +12,16 @@ class InfografiasController extends Controller
      */
     public function index()
     {
-        $infos=infografias::all()->where('estado','1');
+        $infos=infografias::all();
         return view('panel.infografias.index',['infos'=>$infos]);
     }
-
+    public function index_pagina()
+    {
+        $infos=infografias::where('estado','1')
+        ->orderByDesc('id')
+        ->get();;
+        return view('pagina.infografias.index',['infos'=>$infos]);
+    }
     /**
      * Show the form for creating a new resource.
      */

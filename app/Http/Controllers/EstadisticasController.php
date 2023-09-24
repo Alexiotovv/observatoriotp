@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\estadisticas;
+use App\Models\instituciones;
 use Illuminate\Http\Request;
 
 class EstadisticasController extends Controller
@@ -10,17 +11,27 @@ class EstadisticasController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    
+     public function index_pagina()
     {
-        //
+        $instituciones=instituciones::where('estado',1)
+        ->orderByDesc('id')
+        ->get();
+        return view('pagina.estadisticas.index',['instituciones'=>$instituciones]);
     }
+
+    public function index(){
+
+    }
+
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('panel.estadistica.create');
     }
 
     /**

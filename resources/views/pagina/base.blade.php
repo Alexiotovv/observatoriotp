@@ -74,7 +74,7 @@
 													<li><a class="dropdown-item" href="">Notas Informativas</a></li>
 													<li><a class="dropdown-item" href="">Folletos</a></li>
 													<li><a class="dropdown-item" href="">Libros</a></li>
-													<li><a class="dropdown-item" href="">Infografías</a></li>
+													<li><a class="dropdown-item" href="{{route('pagina.infografias.index')}}">Infografías</a></li>
 												</ul>
 											</div>
 										</li>

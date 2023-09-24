@@ -33,7 +33,7 @@
         @endif
 
         <div class="table table-container">
-            <table class="table table-striped table-bordered" id="dtinstituciones">
+            <table class="table table-striped table-bordered" id="dtinfografias">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -46,10 +46,11 @@
                 <tbody>
                     @foreach ($infos as $infos)
                         <tr>
+                            
                             <td>{{$infos->id}}</td>
                             <td><a href="{{route('panel.infografias.edit',$infos->id)}}" class="btn btn-warning btn-sm">Editar</a></td>
                             <td>{{$infos->nombre}}</td>
-                            <td><img src="{{asset('storage/infografias/'.$infos->imagen)}}" style="height: 80px" alt=""></td>
+                            <td> <img src="{{asset('storage/infografias/'.$infos->imagen)}}" style="height: 80px" alt=""> </td>
                             <td><div class="form-check form-switch">
                                 @if ($infos->estado)
                                     <input class="form-check-input chkinfografias" onclick="cambia_estado('infografias')" type="checkbox" id="chkinfografias" checked>
@@ -69,20 +70,21 @@
 @endsection
 @section('extra_js')
     <script>
-        $("#dtinstituciones").DataTable({
+        $("#dtinfografias").DataTable({
             order:[0],
             columnDefs: [
             // { width: "10px", targets: 0 },
             // { width: "40px", targets: 1 },
-            { width: "350px", targets: 2 },
+            // { width: "350px", targets: 2 },
             
             ]
         });
     </script>
 
-    <script src="../../../app_js/chkestado.js"></script>
+    <script src="../../../app_js/chkestados.js"></script>
+
     <script src="../../../panel/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
-	<script src="../../../panel/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
-	<script src="../../../panel/assets/js/table-datatable.js"></script>
+    <script src="../../../panel/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+    <script src="../../../panel/assets/js/table-datatable.js"></script>
 
 @endsection

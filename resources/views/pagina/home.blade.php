@@ -47,7 +47,7 @@
 						<span class="imgHolder d-block w-100 bgCover" style="background-image: url(images/img04.jpg);"></span>
 						<div class="escCaption bg-white shadow position-absolute pt-4 px-2 pb-5">
 							<h3 class="fwMedium mb-0">Datos Estadísticos</h3>
-							<a href="servicesSingle.html" class="btnLink fontAlter">Ver... <i class="fas fa-chevron-right blIcn"><span class="sr-only">icon</span></i></a>
+							<a href="{{route('pagina.estadisticas.index')}}" class="btnLink fontAlter">Ver... <i class="fas fa-chevron-right blIcn"><span class="sr-only">icon</span></i></a>
 						</div>
 					</article>
 				</div>
@@ -56,7 +56,7 @@
 						<span class="imgHolder d-block w-100 bgCover" style="background-image: url(images/img05.jpg);"></span>
 						<div class="escCaption bg-white shadow position-absolute pt-4 px-2 pb-5">
 							<h3 class="fwMedium mb-0">Red de Servicios</h3>
-							<a href="servicesSingle.html" class="btnLink fontAlter">Ver.. <i class="fas fa-chevron-right blIcn"><span class="sr-only">icon</span></i></a>
+							<a href="{{route('pagina.estadisticas.index')}}" class="btnLink fontAlter">Ver aquí.. <i class="fas fa-chevron-right blIcn"><span class="sr-only">icon</span></i></a>
 						</div>
 					</article>
 				</div>
@@ -129,27 +129,34 @@
 	<section class="exploreHeightsBlock pt-4 pb-6 pb-md-9 pt-lg-7 pb-lg-14 pt-xl-11 pb-xl-20">
 		<div class="container">
 			<header class="headingHead text-center mb-12">
-				<h2 class="fwSemiBold">Infografías</h2>
+				<h2 class="fwSemiBold"><a href="#">Infografías</a></h2>
+				<a href="services.html" class="btn btn-dark text-capitalize position-relative border-0 p-0 mt-4 mt-sm-0 mb-sm-1 minWidthMedium" data-hover="Ver...">
+					<span class="d-block btnText">Ver...</span>
+				</a>
 			</header>
 		</div>
 		<div class="row">
 			<div class="echSliderWrap overflow-hidden w-100">
-				<div class="echSlider mx-auto w-100">					
-					<div class="col-12">
-						<div class="echColumn d-block w-100 bgCover position-relative" style="background-image: url(images/img15.jpg);">
-							<a href="images/img15.jpg" class="echCountTag position-absolute fwSemiBold text-white px-3 py-1 lightbox" data-fancybox="true">
-								<i class="far fa-image icn"><span class="sr-only">icon</span></i>
-								6
-							</a>
-							<div class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
-								<h3 class="mb-0 text-white">
-									<strong class="d-block font-weight-normal fontBase echCatTitle mb-1">Goverment</strong>
-									<span class="d-block">Town of Maximonia</span>
-								</h3>
-								<a href="portfolioClassic.html" class="d-inline-block"><i class="rounded-circle icomoon-arrowRight d-flex align-items-center justify-content-center bg-white text-dark spanLinkGo"><span class="sr-only">icon</span></i></a>
+				<div class="echSlider mx-auto w-100">
+					@foreach ($infos as $infos)
+						<div>
+							<div class="col-12">
+								<div class="echColumn d-block w-100 bgCover position-relative" style="background-image: url({{asset('storage/infografias/'.$infos->imagen)}});">
+									<a src="{{asset('storage/infografias/'.$infos->imagen)}}" class="echCountTag position-absolute fwSemiBold text-white px-3 py-1 lightbox" data-fancybox="true">
+										<i class="far fa-image icn"><span class="sr-only">icon</span></i>
+										6
+									</a>
+									<div class="echcCaptionWrap position-absolute w-100 text-white px-3 py-2 px-sm-5 py-sm-4">
+										<h3 class="mb-0 text-white">
+											<strong class="d-block font-weight-normal fontBase echCatTitle mb-1">Infografía</strong>
+											<span class="d-block">{{ $infos->nombre }}</span>
+										</h3>
+										<a href="portfolioClassic.html" class="d-inline-block"><i class="rounded-circle icomoon-arrowRight d-flex align-items-center justify-content-center bg-white text-dark spanLinkGo"><span class="sr-only">icon</span></i></a>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
+						</div>						
+					@endforeach
 				</div>
 			</div>
 		</div>

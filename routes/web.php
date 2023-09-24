@@ -5,6 +5,7 @@ use App\Http\Controllers\NoticiasController;
 use App\Http\Controllers\InstitucionesController;
 use App\Http\Controllers\PeriodosController;
 use App\Http\Controllers\InfografiasController;
+use App\Http\Controllers\EstadisticasController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -62,7 +63,11 @@ Route::post('/panel/infografias/store',[InfografiasController::class,'store'])->
 Route::get('/panel/infografias/index',[InfografiasController::class,'index'])->name('panel.infografias.index');
 Route::get('/panel/infografias/edit/{id}',[InfografiasController::class,'edit'])->name('panel.infografias.edit');
 Route::post('/panel/infografias/update',[InfografiasController::class,'update'])->name('panel.infografias.update');
-Route::get('/panel/infografias/{id}/estado/{valor}',[InfografiasController::class,'estado'])->name('panel.noticias.infografias');
+Route::get('/panel/infografias/{id}/estado/{valor}',[InfografiasController::class,'estado'])->name('panel.infografias.estado');
 
-//CONFIGURACIONES
+Route::get('/pagina/infografias/index',[InfografiasController::class,'index_pagina'])->name('pagina.infografias.index');
+
+
+//ESTADISTICAS
+Route::get('/pagina/estadisticas/index',[EstadisticasController::class,'index_pagina'])->name('pagina.estadisticas.index');
 

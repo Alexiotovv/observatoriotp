@@ -47,9 +47,9 @@ class PeriodosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(periodos $periodos)
+    public function edit($id)
     {
-        $periodo=noticias::find($periodos);
+        $periodo=periodos::find($id);
         return view('panel.periodos.edit',['periodo'=>$periodo]);
     }
 

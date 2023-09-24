@@ -6,7 +6,7 @@ function cambia_estado(elemento) {
     id = (fila).find('td:eq(0)').text();
     $.ajax({
         type: "GET",
-        url: "/panel/"+ elemento +"/"+ id +"/"+ elemento +"/"+ valor,
+        url: "/panel/"+ elemento +"/"+ id +"/estado/"+ valor,
         data: "data",
         dataType: "dataType",
         success: function (response) {

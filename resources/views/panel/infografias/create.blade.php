@@ -16,7 +16,7 @@
                 <input type="text" maxlength="250" name="nombre" class="form-control" required>
 
                 <label for="">Seleccione Imagen (jpeg, png, jpg)</label>
-                <input type="file" name="imagen" id="imagen" class="form-control" accept=".jpeg, .png, .jpg" required>
+                <input type="file" name="imagen" id="imagen" class="form-control" accept=".jpg" required>
                 
                 
                 <br>
