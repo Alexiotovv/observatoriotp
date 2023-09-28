@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('nombre', 250)->default('');
             $table->string('imagen', 250)->default('');
             $table->boolean('estado')->default(true);
+            $table->bigInteger('iduser')->unsigned();
+            $table->foreign('iduser')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -29,6 +29,8 @@
 </head>
 
 <body>
+	@if (Route::has('login'))
+    @auth
 	<!--wrapper-->
 	<div class="wrapper">
 		<!--sidebar wrapper -->
@@ -85,7 +87,19 @@
 						</li>
 					</ul>
 				</li>
-				
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-user'></i>
+						</div>
+						<div class="menu-title">Usuarios</div>
+					</a>
+					<ul>
+						<li> <a href="{{route('usuarios.index')}}"><i class="bx bx-right-arrow-alt"></i>Listar</a>
+						</li>
+						<li> <a href="{{route('usuarios.create')}}"><i class="bx bx-right-arrow-alt"></i>Registrar</a>
+						</li>
+					</ul>
+				</li>
 				{{-- <li class="menu-label">UI Elements</li>
 				<li>
 					<a href="widgets.html">
@@ -470,7 +484,16 @@
 							<li>
 								<div class="dropdown-divider mb-0"></div>
 							</li>
-							<li><a class="dropdown-item" href="javascript:;"><i class='bx bx-log-out-circle'></i><span>Logout</span></a>
+							<li>
+								<form action="/login" method="post">
+									@method('put')
+									@csrf<li>
+									<button   class="dropdown-item" href="javascript:;">
+										<i class='bx bx-log-out-circle'></i> Salir</button>
+									</li>
+								</form>
+								{{-- <a class="dropdown-item" href="javascript:;"><i class='bx bx-log-out-circle'></i><span>Salir</span>
+								</a> --}}
 							</li>
 						</ul>
 					</div>
@@ -496,7 +519,13 @@
 	</div>
 	<!--end wrapper-->
 
-
+      
+    @else
+        <div class="row" style="padding:50px;" >
+            <a class="btn btn-warning" href="{{route('login')}}" style="width: 20%;text-align:center;">Inicie Sesión</a>
+        </div>
+    @endauth
+@endif
 
 	
 	<!-- Bootstrap JS -->

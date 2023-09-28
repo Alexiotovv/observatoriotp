@@ -6,6 +6,8 @@ use App\Http\Controllers\InstitucionesController;
 use App\Http\Controllers\PeriodosController;
 use App\Http\Controllers\InfografiasController;
 use App\Http\Controllers\EstadisticasController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,16 +21,22 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/login',function(){
+    return view('usuarios.login');
+})->name('login')->middleware('guest');
 
+// Route::get('/panel',function(){
+//     return view('panel.home');
+// })->middleware('auth')->name('panel');
 
-Route::get('/',[HomeController::class,'index'])->name('home');
+Route::get('/',[HomeController::class,'index'])->name('inicio');
 
 Route::get('/pagina/noticias/index',[NoticiasController::class,'noticias_index'])->name('pagina.noticias.index');
 Route::get('/pagina/noticias/show/{id}',[NoticiasController::class,'show'])->name('pagina.noticias.show');
 
 
 
-Route::get('/paneladmin',[HomeController::class,'index_panel'])->name('paneladmin');
+Route::get('/home',[HomeController::class,'index_panel'])->middleware('auth')->name('home');
 
 //NOTICIAS
 Route::get('/panel/noticias/index',[NoticiasController::class,'index'])->name('panel.noticias.index');
@@ -68,6 +76,27 @@ Route::get('/panel/infografias/{id}/estado/{valor}',[InfografiasController::clas
 Route::get('/pagina/infografias/index',[InfografiasController::class,'index_pagina'])->name('pagina.infografias.index');
 
 
-//ESTADISTICAS
+//ESTADISTICAS-PAGINA
 Route::get('/pagina/estadisticas/index',[EstadisticasController::class,'index_pagina'])->name('pagina.estadisticas.index');
+Route::get('/pagina/estadisticas/show/{id}',[EstadisticasController::class,'show'])->name('pagina.estadisticas.show');
+
+//ESTADISTICAS
+Route::get('/panel/estadistica/create/{id}',[EstadisticasController::class,'create'])->name('panel.estadistica.create');
+Route::post('/panel/estadistica/store',[EstadisticasController::class,'store'])->name('panel.estadistica.store');
+Route::get('/panel/estadistica/edit/{id}',[EstadisticasController::class,'edit'])->name('panel.estadistica.edit');
+Route::post('/panel/estadistica/update',[EstadisticasController::class,'update'])->name('panel.estadistica.update');
+Route::get('/panel/estadistica/destroy/{id}',[EstadisticasController::class,'destroy'])->name('panel.estadistica.destroy');
+//USUARIOS
+Route::get('/usuarios/index', [UserController::class,'index'])->middleware(['auth'])->name('usuarios.index');
+Route::get('/usuarios/edit/{id}', [UserController::class,'edit'])->middleware(['auth'])->name('usuarios.edit');
+Route::post('/usuarios/update', [UserController::class,'update'])->middleware(['auth'])->name('usuarios.update');
+Route::get('/usuarios/create', [UserController::class,'create'])->middleware(['auth'])->name('usuarios.create');
+Route::post('/usuarios/store', [UserController::class,'store'])->middleware(['auth'])->name('usuarios.store');
+
+Route::get("/verificanombre/{name}",[UserController::class,'verificanombre'])->middleware(['auth'])->name('verificanombre');
+Route::get("/verificaemail/{email}",[UserController::class,'verificaemail'])->middleware(['auth'])->name('verificaemail');
+Route::post("/ActualizaContrasena",[UserController::class, "ActualizaContrasena"])->middleware(['auth'])->name('Actualiza.Contrasena');
+
+Route::post("/login",[LoginController::class, 'login']);
+Route::put('/login', [LoginController::class, 'logout']);
 

@@ -58,6 +58,7 @@ class NoticiasController extends Controller
         $obj->slider = request('slider');
         $obj->portada = request('portada');
         $obj->estado = request('estado');
+        $obj->iduser=auth()->user()->id;
         $obj->save();
         return redirect()->route('panel.noticias.index')->with('mensaje','El registro se guardó correctamente!');
     }

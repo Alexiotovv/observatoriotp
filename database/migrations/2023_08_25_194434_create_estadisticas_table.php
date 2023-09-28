@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('titulo', 100)->default('');
             $table->longText('contenido');
             $table->date('fecha');
+            $table->bigInteger('iduser')->unsigned();
+            $table->foreign('iduser')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('periodos', function (Blueprint $table) {
+        Schema::create('estadisticaarchivos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 250)->default('');
-            $table->string('descripcion', 250)->default('');
+            $table->bigInteger('idestadistica')->unsigned();
+            $table->foreign('idestadistica')->references('id')->on('estadisticas')->onDelete('cascade');
+            $table->string('archivo', 250)->default('');
+            $table->string('extension', 100)->default('');
+            $table->boolean('estado')->default(true);
             $table->bigInteger('iduser')->unsigned();
             $table->foreign('iduser')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('periodos');
+        Schema::dropIfExists('estadisticaarchivos');
     }
 };

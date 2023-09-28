@@ -45,6 +45,7 @@ class InfografiasController extends Controller
             $obj->imagen = $archivo;
         }
         $obj->nombre=request('nombre');
+        $obj->iduser=auth()->user()->id;
         $obj->save();
 
         return redirect()->route('panel.infografias.index')->with('mensaje','Registro Guardado Correctamente!');

@@ -25,7 +25,7 @@
                             <div class="egdcCaption py-4 px-3 py-md-8 px-md-6">
                                 <h3 class="fwMedium">{{$i->titulo}}</h3>
                                 <p>{{Str::limit($i->descripcion,50)}}...</p>
-                                <a href="departmentsSingle.html" class="btn btn-outline-light btnNoOver d-block w-100 mt-7">Infórmate aquí <i class="fas btnBnoIcn fa-arrow-right mx-1"><span class="sr-only">icon</span></i></a>
+                                <a href="{{route('pagina.estadisticas.show',$i->id)}}" class="btn btn-outline-light btnNoOver d-block w-100 mt-7">Infórmate aquí <i class="fas btnBnoIcn fa-arrow-right mx-1"><span class="sr-only">icon</span></i></a>
                             </div>
                         </article>
                 

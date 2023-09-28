@@ -33,15 +33,16 @@
         @endif
 
         <div class="table table-container">
-            <table class="table table-striped table-bordered" id="dtinstituciones">
+            <table class="table table-hover table-striped table-bordered" id="dtinstituciones">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Acción</th>
+                        <th>Estadística</th>
                         <th>Logo</th>
                         <th>Titulo</th>
                         <th>Descripción</th>
                         <th>Contenido</th>
+                        <th>Acción</th>
                         <th>Estado</th>
                     </tr>
                 </thead>
@@ -50,8 +51,22 @@
                         <tr>
                             <td>{{$d->id}}</td>
                             <td>
-                                <a href="{{route('panel.instituciones.edit',$d->id)}}" class="btn btn-warning btn-sm"><i class="fadeIn animated bx bx-pencil"></i></a>
-                                <a href="" class="btn btn-success btn-sm"><i class="fadeIn animated bx bx-plus"></i>Nueva Estadística</a>
+                                @foreach ($estadistica as $e)
+                                    @if ($d->id==$e->idinstituciones)
+                                        <div class="input-group">
+                                            <a href="{{route('panel.estadistica.create',$d->id)}}" class="btn btn-success btn-sm"><i class="fadeIn animated bx bx-plus"></i></a>
+                                            <a href="{{route('panel.estadistica.edit',$e->id)}}" class="btn btn-warning btn-sm"><i class="bx bx-pencil"></i></a>
+                                        </div>
+                                        <h5>Año: {{$e->ano}}</h5>
+                                        <i class="bx bx-folder-plus"></i>{{$e->titulo}}<br>
+                                        @foreach ($archivos as $a)
+                                            @if ($a->idestadistica==$e->id)                                                
+                                                <a href="{{asset('storage/estadistica/'.$a->archivo)}}">{{$a->archivo}}</a><br>
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                    <hr>
+                                @endforeach     
                             </td>
                             <td style="text-align: center">
                                 <img src="{{asset('storage/instituciones/'.$d->ruta_logo)}}" style="height: 80px;" alt="">
@@ -59,6 +74,10 @@
                             <td>{{$d->titulo}}</td>
                             <td>{{$d->descripcion}}</td>
                             <td>{!! $d['contenido'] !!}</td>
+                            <td>
+                                <a href="{{route('panel.instituciones.edit',$d->id)}}" class="btn btn-warning btn-sm"><i class="fadeIn animated bx bx-pencil"></i></a>
+                                
+                            </td>
                             <td>{{$d->estado}}</td>
                         </tr>
                     @endforeach
@@ -69,6 +88,9 @@
     </div>
 
 </div>
+
+        
+
 @endsection
 @section('extra_js')
     <script>

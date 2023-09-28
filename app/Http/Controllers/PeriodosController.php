@@ -32,6 +32,7 @@ class PeriodosController extends Controller
         $obj = new periodos();
         $obj->nombre = request('nombre');
         $obj->descripcion = request('descripcion');
+        $obj->iduser=auth()->user()->id;
         $obj->save();
         return redirect()->route('panel.periodos.index')->with('mensaje','ok');
     }

@@ -21,6 +21,8 @@ return new class extends Migration
             $table->boolean('slider')->default(false);
             $table->boolean('portada')->default(false);
             $table->boolean('estado')->default(false);
+            $table->bigInteger('iduser')->unsigned();
+            $table->foreign('iduser')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

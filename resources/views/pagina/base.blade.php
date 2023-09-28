@@ -113,7 +113,7 @@
 							</div>
 							<div class="hdRighterWrap d-flex align-items-center justify-content-end">
 
-								<a href="contact-1.html" class="btn btn-outline-secondary bdrWidthAlter ml-3 ml-xl-6 btnHd d-none d-lg-block text-capitalize position-relative border-0 p-0" data-hover="aula virtual">
+								<a href="{{route('login')}}" class="btn btn-outline-secondary bdrWidthAlter ml-3 ml-xl-6 btnHd d-none d-lg-block text-capitalize position-relative border-0 p-0" data-hover="aula virtual">
 									<span class="d-block btnText">Aula virtual</span>
 								</a>
 								<button class="navbar-toggler pgNavOpener ml-2 bdrWidthAlter position-relative" type="button" data-toggle="collapse" data-target="#pageMainNavCollapse" aria-controls="pageMainNavCollapse" aria-expanded="false" aria-label="Toggle navigation">

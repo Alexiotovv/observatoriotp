@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\instituciones;
 use Illuminate\Http\Request;
-
+use App\Models\estadisticaarchivos;
+use App\Models\estadisticas;
+use DB;
 class institucionesController extends Controller
 {
     /**
@@ -13,7 +15,12 @@ class institucionesController extends Controller
     public function index()
     {
         $instituciones=instituciones::all();
-        return view('panel.instituciones.index',['instituciones'=>$instituciones]);
+        $estadistica=DB::table('estadisticas')
+        ->leftjoin('periodos','periodos.id','=','estadisticas.idperiodos')
+        ->select('estadisticas.*','periodos.nombre as ano')
+        ->get();
+        $archivos=estadisticaarchivos::all()->where('estado',1);
+        return view('panel.instituciones.index',['instituciones'=>$instituciones,'estadistica'=>$estadistica,'archivos'=>$archivos]);
     }
 
     /**
@@ -43,6 +50,7 @@ class institucionesController extends Controller
         $obj->contenido = request('contenido');
         //nombre archivo y ruta es arriba
         $obj->estado = request('estado');
+        $obj->iduser=auth()->user()->id;
         $obj->save();
         return redirect()->route('panel.instituciones.index')->with('mensaje','ok');
     }

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->text('descripcion');
             $table->longText('contenido');
             $table->boolean('estado')->default(true);
+            $table->bigInteger('iduser')->unsigned();
+            $table->foreign('iduser')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
