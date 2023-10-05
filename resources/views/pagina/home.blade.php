@@ -12,7 +12,7 @@
 									<div class="row">
 										<div class="col-12 col-md-9 col-xl-7 fzMedium" >
 											<h1 class="text-white mb-4 h1Medium">{{$item->titulo}}</h1>
-											<p>{{$item->description}}</p>
+											<p>{{$item->descripcion}}</p>
 											<a href="{{route('pagina.noticias.show',$item->id)}}" class="btn btnTheme font-weight-bold btnMinSm text-capitalize position-relative border-0 p-0 mt-6" data-hover="Leer Más...">
 												<span class="d-block btnText">Leer Más..</span>
 											</a>
@@ -130,7 +130,7 @@
 		<div class="container">
 			<header class="headingHead text-center mb-12">
 				<h2 class="fwSemiBold"><a href="#">Infografías</a></h2>
-				<a href="services.html" class="btn btn-dark text-capitalize position-relative border-0 p-0 mt-4 mt-sm-0 mb-sm-1 minWidthMedium" data-hover="Ver...">
+				<a href="{{route('pagina.infografias.index')}}" class="btn btn-dark text-capitalize position-relative border-0 p-0 mt-4 mt-sm-0 mb-sm-1 minWidthMedium" data-hover="Ver...">
 					<span class="d-block btnText">Ver...</span>
 				</a>
 			</header>

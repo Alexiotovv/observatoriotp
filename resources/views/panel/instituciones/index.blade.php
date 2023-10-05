@@ -61,7 +61,7 @@
                                         <i class="bx bx-folder-plus"></i>{{$e->titulo}}<br>
                                         @foreach ($archivos as $a)
                                             @if ($a->idestadistica==$e->id)                                                
-                                                <a href="{{asset('storage/estadistica/'.$a->archivo)}}">{{$a->archivo}}</a><br>
+                                                <a href="{{asset('storage/estadistica/'.$a->archivo)}}" style="padding-left:10px">{{$a->archivo}}</a><br>
                                             @endif
                                         @endforeach
                                     @endif

@@ -6,6 +6,7 @@ use App\Http\Controllers\InstitucionesController;
 use App\Http\Controllers\PeriodosController;
 use App\Http\Controllers\InfografiasController;
 use App\Http\Controllers\EstadisticasController;
+use App\Http\Controllers\ReddeserviciosController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,17 @@ Route::get('/pagina/noticias/show/{id}',[NoticiasController::class,'show'])->nam
 
 
 Route::get('/home',[HomeController::class,'index_panel'])->middleware('auth')->name('home');
+
+
+//RED DE SERVICIOS
+Route::get('/panel/reddeservicios/index',[ReddeserviciosController::class,'index'])->name('panel.reddeservicios.index');
+Route::get('/panel/reddeservicios/create',[ReddeserviciosController::class,'create'])->name('panel.reddeservicios.create');
+Route::get('/panel/reddeservicios/edit/{id}',[ReddeserviciosController::class,'edit'])->name('panel.reddeservicios.edit');
+Route::post('/panel/reddeservicios/store',[ReddeserviciosController::class,'store'])->name('panel.reddeservicios.store');
+Route::post('/panel/reddeservicios/update',[ReddeserviciosController::class,'update'])->name('panel.reddeservicios.update');
+
+Route::get('/panel/reddeservicios/{id}/estado/{valor}',[ReddeserviciosController::class,'estado'])->name('panel.reddeservicios.estado');
+
 
 //NOTICIAS
 Route::get('/panel/noticias/index',[NoticiasController::class,'index'])->name('panel.noticias.index');

@@ -58,9 +58,11 @@
 						</li>
 						<li> <a href="{{route('panel.instituciones.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Estadística</a>
 						</li>
-						<li> <a href="{{route('panel.periodos.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Periodos</a>
-						</li>
 						<li> <a href="{{route('panel.infografias.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Infografías</a>
+						</li>
+						<li> <a href="{{route('panel.reddeservicios.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Red Servicios</a>
+						</li>
+						<li> <a href="{{route('panel.periodos.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Periodos</a>
 						</li>
 					</ul>
 				</li>

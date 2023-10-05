@@ -43,7 +43,7 @@
 								<div class="collapse navbar-collapse pageMainNavCollapse mt-2 mt-md-0" id="pageMainNavCollapse">
 									<ul class="navbar-nav mainNavigation">
 										<li class="nav-item dropdown ddohOpener">
-											<a class="nav-link dropdown-toggle" href="{{route('home')}}">Inicio</a>
+											<a class="nav-link dropdown-toggle" href="/">Inicio</a>
 
 										</li>
 										<li class="nav-item dropdown ddohOpener">
@@ -60,7 +60,7 @@
 											<a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Observatorio</a>
 											<div class="dropdown-menu hdMainDropdown desktopDropOnHover">
 												<ul class="list-unstyled mb-0 hdDropdownList">
-													<li><a class="dropdown-item" href="{{route('panel.instituciones.index')}}">Datos Estadístico</a></li>
+													<li><a class="dropdown-item" href="{{route('pagina.estadisticas.index')}}">Datos Estadístico</a></li>
 													<li><a class="dropdown-item" href="">Red de Servicios</a></li>
 													<li><a class="dropdown-item" href="">Normatividad</a></li>
 												</ul>
