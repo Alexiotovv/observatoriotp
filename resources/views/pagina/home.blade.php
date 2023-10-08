@@ -47,7 +47,7 @@
 						<span class="imgHolder d-block w-100 bgCover" style="background-image: url(images/img04.jpg);"></span>
 						<div class="escCaption bg-white shadow position-absolute pt-4 px-2 pb-5">
 							<h3 class="fwMedium mb-0">Datos Estadísticos</h3>
-							<a href="{{route('pagina.estadisticas.index')}}" class="btnLink fontAlter">Ver... <i class="fas fa-chevron-right blIcn"><span class="sr-only">icon</span></i></a>
+							<a href="{{route('pagina.estadisticas.index')}}" class="btnLink fontAlter"><h4>Ver...</h4><i class="fas fa-chevron-right blIcn"><span class="sr-only">icon</span></i></a>
 						</div>
 					</article>
 				</div>
@@ -56,7 +56,7 @@
 						<span class="imgHolder d-block w-100 bgCover" style="background-image: url(images/img05.jpg);"></span>
 						<div class="escCaption bg-white shadow position-absolute pt-4 px-2 pb-5">
 							<h3 class="fwMedium mb-0">Red de Servicios</h3>
-							<a href="{{route('pagina.estadisticas.index')}}" class="btnLink fontAlter">Ver aquí.. <i class="fas fa-chevron-right blIcn"><span class="sr-only">icon</span></i></a>
+							<a href="{{route('pagina.reddeservicios.index')}}" class="btnLink fontAlter"><h4>Ver...</h4><i class="fas fa-chevron-right blIcn"><span class="sr-only">icon</span></i></a>
 						</div>
 					</article>
 				</div>
@@ -65,7 +65,7 @@
 						<span class="imgHolder d-block w-100 bgCover" style="background-image: url(images/img06.jpg);"></span>
 						<div class="escCaption bg-white shadow position-absolute pt-4 px-2 pb-5">
 							<h3 class="fwMedium mb-0">Normatividad</h3>
-							<a href="servicesSingle.html" class="btnLink fontAlter">Ver.. <i class="fas fa-chevron-right blIcn"><span class="sr-only">icon</span></i></a>
+							<a href="{{route('pagina.normatividad.index')}}" class="btnLink fontAlter"><h4>Ver...</h4><i class="fas fa-chevron-right blIcn"><span class="sr-only">icon</span></i></a>
 						</div>
 					</article>
 				</div>

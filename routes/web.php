@@ -7,6 +7,8 @@ use App\Http\Controllers\PeriodosController;
 use App\Http\Controllers\InfografiasController;
 use App\Http\Controllers\EstadisticasController;
 use App\Http\Controllers\ReddeserviciosController;
+use App\Http\Controllers\NormatividadController;
+use App\Http\Controllers\NormatividadarchivosController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +41,23 @@ Route::get('/pagina/noticias/show/{id}',[NoticiasController::class,'show'])->nam
 
 Route::get('/home',[HomeController::class,'index_panel'])->middleware('auth')->name('home');
 
+//NORMATIVIDAD
+Route::get('/panel/normatividad/index',[NormatividadController::class,'index'])->name('panel.normatividad.index');
+Route::get('/panel/normatividad/create',[NormatividadController::class,'create'])->name('panel.normatividad.create');
+Route::get('/panel/normatividad/edit/{id}',[NormatividadController::class,'edit'])->name('panel.normatividad.edit');
+Route::post('/panel/normatividad/store',[NormatividadController::class,'store'])->name('panel.normatividad.store');
+Route::post('/panel/normatividad/update',[NormatividadController::class,'update'])->name('panel.normatividad.update');
+Route::get('/panel/normatividad/destroy/{id}',[NormatividadController::class,'destroy'])->name('panel.normatividad.destroy');
+Route::get('/panel/normatividad/{id}/estado/{valor}',[NormatividadController::class,'estado'])->name('panel.normatividad.estado');
+
+Route::get('/pagina/normatividad/index',[NormatividadController::class,'pagina_index'])->name('pagina.normatividad.index');
+
+//NORMATIVIDAD ARCHIVOS
+Route::get('/panel/normatividadarchivos/create/{id}',[NormatividadarchivosController::class,'create'])->name('panel.normatividadarchivos.create');
+Route::post('/panel/normatividadarchivos/store',[NormatividadarchivosController::class,'store'])->name('panel.normatividadarchivos.store');
+Route::get('/panel/normatividadarchivos/destroy/{id}',[NormatividadarchivosController::class,'destroy'])->name('panel.normatividadarchivos.destroy');
+
+
 
 //RED DE SERVICIOS
 Route::get('/panel/reddeservicios/index',[ReddeserviciosController::class,'index'])->name('panel.reddeservicios.index');
@@ -46,9 +65,9 @@ Route::get('/panel/reddeservicios/create',[ReddeserviciosController::class,'crea
 Route::get('/panel/reddeservicios/edit/{id}',[ReddeserviciosController::class,'edit'])->name('panel.reddeservicios.edit');
 Route::post('/panel/reddeservicios/store',[ReddeserviciosController::class,'store'])->name('panel.reddeservicios.store');
 Route::post('/panel/reddeservicios/update',[ReddeserviciosController::class,'update'])->name('panel.reddeservicios.update');
-
 Route::get('/panel/reddeservicios/{id}/estado/{valor}',[ReddeserviciosController::class,'estado'])->name('panel.reddeservicios.estado');
 
+Route::get('/pagina/reddeservicios/index',[ReddeserviciosController::class,'pagina_index'])->name('pagina.reddeservicios.index');
 
 //NOTICIAS
 Route::get('/panel/noticias/index',[NoticiasController::class,'index'])->name('panel.noticias.index');

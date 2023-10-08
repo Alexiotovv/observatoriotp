@@ -10,6 +10,12 @@ class ReddeserviciosController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function pagina_index()
+    {
+        $reddeservicios=reddeservicios::all()->where('estado',1);
+        return view('pagina.reddeservicios.index',['reddeservicios'=>$reddeservicios]);
+    }
+    
     public function index()
     {
         $reddeservicios=reddeservicios::all()->where('estado',1);

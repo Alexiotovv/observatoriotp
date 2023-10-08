@@ -19,7 +19,7 @@ class InfografiasController extends Controller
     {
         $infos=infografias::where('estado','1')
         ->orderByDesc('id')
-        ->get();;
+        ->get();
         return view('pagina.infografias.index',['infos'=>$infos]);
     }
     /**

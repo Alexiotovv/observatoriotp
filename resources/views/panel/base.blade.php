@@ -54,15 +54,17 @@
 						<div class="menu-title">Panel Admin</div>
 					</a>
 					<ul>
-						<li> <a href="{{route('panel.noticias.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Noticias</a>
+						<li><a href="{{route('panel.noticias.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Noticias</a>
 						</li>
-						<li> <a href="{{route('panel.instituciones.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Estadística</a>
+						<li><a href="{{route('panel.instituciones.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Estadística</a>
 						</li>
-						<li> <a href="{{route('panel.infografias.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Infografías</a>
+						<li><a href="{{route('panel.infografias.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Infografías</a>
 						</li>
-						<li> <a href="{{route('panel.reddeservicios.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Red Servicios</a>
+						<li><a href="{{route('panel.reddeservicios.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Red Servicios</a>
 						</li>
-						<li> <a href="{{route('panel.periodos.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Periodos</a>
+						<li><a href="{{route('panel.normatividad.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Normatividad</a>
+						</li>
+						<li><a href="{{route('panel.periodos.index')}}"><i class="bx bx-right-arrow-alt"></i>Registrar Periodos</a>
 						</li>
 					</ul>
 				</li>

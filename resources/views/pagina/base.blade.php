@@ -60,9 +60,9 @@
 											<a class="nav-link dropdown-toggle dropIcn" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Observatorio</a>
 											<div class="dropdown-menu hdMainDropdown desktopDropOnHover">
 												<ul class="list-unstyled mb-0 hdDropdownList">
-													<li><a class="dropdown-item" href="{{route('pagina.estadisticas.index')}}">Datos Estadístico</a></li>
-													<li><a class="dropdown-item" href="">Red de Servicios</a></li>
-													<li><a class="dropdown-item" href="">Normatividad</a></li>
+													<li><a class="dropdown-item" href="{{route('pagina.estadisticas.index')}}">Datos Estadísticos</a></li>
+													<li><a class="dropdown-item" href="{{route('pagina.reddeservicios.index')}}">Red de Servicios</a></li>
+													<li><a class="dropdown-item" href="{{route('pagina.normatividad.index')}}">Normatividad</a></li>
 												</ul>
 											</div>
 										</li>
@@ -187,13 +187,13 @@
 								<h3 class="ftHeading text-white mb-4">Observatorio</h3>
 								<ul class="list-unstyled ftsrLinksList mb-0">
 									<li>
-										<a href="newsClassic.html">Datos Estadísticos</a>
+										<a href="{{route('pagina.estadisticas.index')}}">Datos Estadísticos</a>
 									</li>
 									<li>
-										<a href="portfolioClassic.html">Red de Servicios</a>
+										<a href="{{route('pagina.reddeservicios.index')}}">Red de Servicios</a>
 									</li>
 									<li>
-										<a href="history.html">Normatividad</a>
+										<a href="{{route('pagina.normatividad.index')}}">Normatividad</a>
 									</li>
 								</ul>
 							</div>

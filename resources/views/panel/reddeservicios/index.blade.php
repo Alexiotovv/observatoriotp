@@ -40,6 +40,7 @@
                             <th>Acción</th>
                             <th>Titulo</th>
                             <th>Descripción</th>
+                            <th>Enlace</th>
                             <th>Imagen</th>
                             <th>Estado</th>
                         </tr>
@@ -53,6 +54,7 @@
                                 </td>
                                 <td>{{$n->titulo}}</td>
                                 <td>{{$n->descripcion}}</td>
+                                <td><a href="{{$n->enlace}}" target="blank_" >{{$n->enlace}}</a></td>
                                 <td>
                                     <img src="{{asset('storage/reddeservicios/'.$n->logo)}}" style="height: 120px;" alt="">
                                 </td>                                
